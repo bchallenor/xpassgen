@@ -4,7 +4,11 @@ import scala.io.Source
 import java.security.SecureRandom
 
 object Program extends App {
-  val baseWords = Source.fromFile("3esl.txt", "utf-8").getLines.toVector
+  val baseWords = {
+    val s = getClass.getResourceAsStream("3esl.txt")
+    try Source.fromInputStream(s, "utf-8").getLines.toVector
+    finally s.close
+  }
 
   def eligible(word: String): Boolean = (word.size >= 5) && (word.size <= 8) && (word forall (_.isLower))
   val words = baseWords filter eligible

@@ -1,5 +1,8 @@
-xpassgen: Generates XKCD-style passphrases with a 10k ESL wordlist and SecureRandom
-===================================================================================
+xpassgen
+========
+
+Generates XKCD-style passphrases with a 10k ESL wordlist and SecureRandom.
+
 
 Sample output
 -------------
